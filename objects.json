@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "Bilal",
+    "Lastname": "Kucuk",
+    "Age": 21,
+    "Country": "Turkey",
+    "City": "Antalya"
+  },
+  {
+    "Name": "Hatice",
+    "Lastname": "Yilmaz",
+    "Age": 22,
+    "Country": "Turkey",
+    "City": "Istanbul"
+  },
+  {
+    "Name": "Deniz",
+    "Lastname": "Yildirim",
+    "Age": 19,
+    "Country": "Turkey",
+    "City": "Izmir"
+  }
+]

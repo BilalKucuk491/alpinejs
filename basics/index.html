@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpine.js Project</title>
+  <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+  <script src="./app.js"></script> 
+
+</head>
+<body>
+<!-- <div x-data="{name:'bilal',message:'Hello <b>World</b>'}">
+  <span x-html="message"></span>
+</div>
+<div x-data="" x-text="await (await fetch('https://jsonplaceholder.typicode.com/todos/2')).text()"></div>
+
+<div x-data="{
+  message:'Click to change',
+  change(){
+    this.message='Changed message';
+  }}">
+
+  <span x-text="message" @click="change()" ></span>
+</div> -->
+ <!-- re-usable data -->
+<!-- <div x-data="dropdown">
+  <button @click="toggle">OPEN/CLOSE</button>
+  <div x-show="open"> 
+    Content...
+  </div>
+</div>
+
+<div x-data="dropdown">
+  <button @click="toggle">OPEN/CLOSE</button>
+  <div x-show="open"> 
+    Content...
+  </div>
+</div> -->
+
+<!-- data-less components -->
+
+<!-- <div x-data @click="alert('Something')">
+Click Me 
+</div> -->
+
+<!-- data coming from store -->
+
+<!-- <div x-data="" x-text="$store.currentUser.posts"> -->
+
+ <!-- x-init -->
+  <!-- <div x-init="console.log('merhaba bilal')">
+  </div>
+  <div x-data="{init(){console.log('i am initialized ')}}">
+  </div>
+
+  <div x-data="{todo:{}}"
+  x-init="todo = await ((await fetch('https://jsonplaceholder.typicode.com/todos/3')).json())"  
+  >
+  <p x-text="todo.title"></p>
+  </div> -->
+
+  <!-- scoping -->
+
+  <!-- <div x-data="{
+    name: 'Natasha',
+    age:'24',
+    gender:'female'}">
+
+    <div x-data="{
+      name:'Bilal',
+      age:'19',
+      gender:'male'}">
+      <div x-data="{name:'Daisy'}">
+        <p x-text="age"></p>
+      </div>
+    </div>
+
+  </div> -->
+
+  <!-- getters and setters -->
+<!-- 
+  <div x-data="{
+    open:false,
+    get isOpen() { 
+      return this.open
+    },
+    set isOpen(open){
+      this.open = open
+    },
+    toggle(){
+      this.isOpen = !this.isOpen
+    } 
+    }">
+      <button @click="toggle">Open/Close</button>
+      <div x-show="open">Content...</div>
+  </div> -->
+
+  <!-- x-show and x-transtion -->
+  <!-- <div x-data="{
+    open:false,
+    toggle(){
+      this.open = !this.open
+    } 
+    }">
+      <button @click="toggle">Open/Close</button>
+      <div x-show="open" 
+      x-transition:enter.duration.500ms 
+      x-transition:leave.duration.800ms 
+      >Content...</div>
+  </div>  -->
+  
+  <!-- x-if -->
+
+  <!-- <div x-data="{
+    open:false,
+    toggle(){
+      this.open = !this.open
+    } 
+    }">
+      <button @click="toggle">Open/Close</button>
+      <template x-if="open">
+      <div>Content...</div>
+    </template>
+  </div>  -->
+
+
+  <!-- x-for -->
+
+  <!-- <div x-data="{
+    posts:[
+    {id:0,title:'Post 0'},
+    {id:1,title:'Post 1'},
+    {id:2,title:'Post 2'}]
+  }">
+
+  <template x-for="p in posts" :key="p.id">
+    <ul>
+      <li x-text="p.title.toUpperCase()"></li>
+    </ul>
+  </template>
+  </div> -->
+
+
+  <!-- x-for-range -->
+
+  <!-- <div x-data="">
+  <template x-for="n in 15">
+    <p x-text="n"></p>
+  </template>
+  </div> -->
+
+  <!-- x-bind: class -->
+  <!-- <div x-data="{clicked:false}">
+    <button class="btn" x-bind:class="clicked ? 'green': 'red'" @click="clicked=!clicked">Button</button>
+  </div>
+  <style>
+    .btn{
+      border: none;
+      color: white;
+      width: 80px;
+      height: 50px;
+      border-radius:5em;
+    }
+    .red {
+      background-color: red;
+    }
+    .green {
+      background-color: green;
+    }
+  </style> -->
+
+  <!-- x-bind:style -->
+   <!-- <div x-data="{clicked:false}">
+    <button style="color:white; border:none;" :style="{backgroundColor: clicked ? 'green': 'blue'}" @click="clicked=!clicked">Click Me</button>
+   </div>  -->
+
+   <!-- x-bind:id -->
+
+   <!-- <button x-data="{id:''}" :id="id" @click="id = Math.round(Math.random() * 10000)">Random Number Generator</button> -->
+
+   <!-- challenge -->
+<!-- 
+   <div x-data="{colors:['red','green','blue']}">
+    <template x-for="color in colors">
+      <div style="width: 40px; height: 40px; display: inline-block;" :style="{backgroundColor:color}"></div>
+    </template>
+   </div> -->
+
+   <!-- x-on -->
+    <!-- yazi yazmaya basladimizda tetikleniyor
+   <div x-data="" @edit="console.log('edit was triggered')">
+     <button @click="console.log('clicked')">Click Me</button>
+     <input type="text" @keyup="console.log('keyup')"> 
+
+     <button @click="$dispatch('edit')">Edit</button>
+
+   </div> -->
+
+   <!-- x-model
+
+    <div x-data="{keyboard:'hi'}">
+      <input type="text" x-model="keyboard" placeholder="Search for items">
+      <p x-text="keyboard"></p>
+    </div> -->
+
+    <!-- challenge -->
+
+    <!-- <div x-data="{keyboard:'Button',color:'blue',btnId:'0'}">
+      <button 
+      style="border:none; color: white;" 
+      :style="{backgroundColor:color}" 
+      x-text="keyboard"
+      :id="btnId"
+      ></button>
+      <input x-model="keyboard" type="text">
+      <input x-model="color" type="text">
+      <input x-model="btnId" type="text">
+      <button @click="keyboard='Button',color='blue',btnId='0'">Reset All</button>
+    </div> -->
+
+    <!-- x-ref -->
+
+      <!-- <div x-data="">
+        <input x-ref="inputEmail" type="text" placeholder="Email">
+        <button @click="$refs.inputEmail.style.borderColor = 'red'">Check</button>
+      </div> -->
+
+      <!-- x-cloak -->
+        
+      <!-- <div x-data="dropdown">
+        <button @click="toggle">OPEN/CLOSE</button>
+        <div x-show="open"> 
+        Content...
+        </div>
+      </div>
+      <style>
+          [x-cloak] {
+            display: none !important;
+          }
+      </style> -->
+
+
+      <!-- x-teleport -->
+      <!-- butonun bir altinda gorukmek yerine body ile butunlesip body icinde gozukuyor fakat xdatali divde bulunmaz
+      <div x-data="">
+        <p>Some Long Content</p>
+        <div x-data="{modal:false}">
+          <button @click="modal = !modal">Show Modal</button>
+          <template x-teleport="body">
+            
+          <div x-show="modal">Modal Content...</div>
+          </template>
+        </div>
+        <p>Another Content</p>
+      </div> -->
+
+
+
+      <!-- magic properties -->
+
+      <!-- $el -->
+
+        <!-- <div x-data="" x-init="console.log('Init',$el)">
+          <button @click="console.log($el)">Click Me</button>
+        </div> -->
+
+
+        <!-- $watch -->
+         <!-- watch belirlenen degeri izler ve eski degeri de tutar -->
+         <!-- <div x-data="{modal:false}" x-init="$watch('modal',(val,old)=> console.log(val,old))">
+          <button @click="modal=!modal">$watch example</button>
+         </div>  -->
+
+         <!-- $nextTick -->
+         <!-- burada tiklama islemi yapildiginde mary yazdirilir. $nextTick ile sonrakini yani john yazdirilir  -->
+         <!-- <div x-data="{name:'Mary'}">
+          <button @click="name='John'; $nextTick(() =>  console.log($refs.p.innerText))">Change Name</button>
+          <p x-ref="p" x-text="name"></p>
+         </div> -->
+
+         <!-- root -->
+
+         <div x-data="">
+          <div>
+            
+          </div>
+         </div>
+
+    </body>
+</html>
